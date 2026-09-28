@@ -1,0 +1,173 @@
+{
+  "products": [
+    {
+      "Name": "B-M",
+      "tasks": [
+        {
+          "name": "Beam assembly",
+          "processingTime": 0.0,
+          "personnel": [],
+          "precedence": [],
+          "materials": [],
+          "id": 2,
+          "outline_level": 2,
+          "tasks": [
+            {
+              "name": "Cross-beam axes",
+              "processingTime": 28800.0,
+              "personnel": [
+                "Mechanic"
+              ],
+              "precedence": [],
+              "materials": [
+                "PART-0001",
+                "PART-0002"
+              ],
+              "id": 3,
+              "outline_level": 3
+            },
+            {
+              "name": "Services",
+              "processingTime": 14400.0,
+              "personnel": [
+                "Mechanic"
+              ],
+              "precedence": [],
+              "materials": [
+                "PART-0003"
+              ],
+              "id": 4,
+              "outline_level": 3
+            },
+            {
+              "name": "Electro-spindle installation",
+              "processingTime": 14400.0,
+              "personnel": [
+                "Mechanic"
+              ],
+              "precedence": [
+                "Cross-beam axes",
+                "Services"
+              ],
+              "materials": [
+                "PART-0004"
+              ],
+              "id": 5,
+              "outline_level": 3
+            }
+          ]
+        },
+        {
+          "name": "Base frame",
+          "processingTime": 0.0,
+          "personnel": [],
+          "precedence": [],
+          "materials": [],
+          "id": 6,
+          "outline_level": 2,
+          "tasks": [
+            {
+              "name": "Base slides",
+              "processingTime": 21600.0,
+              "personnel": [
+                "Mechanic"
+              ],
+              "precedence": [],
+              "materials": [
+                "PART-0005"
+              ],
+              "id": 7,
+              "outline_level": 3
+            },
+            {
+              "name": "Vises",
+              "processingTime": 14400.0,
+              "personnel": [
+                "Mechanic"
+              ],
+              "precedence": [
+                "Base slides"
+              ],
+              "materials": [
+                "PART-0006",
+                "PART-0007"
+              ],
+              "id": 8,
+              "outline_level": 3
+            },
+            {
+              "name": "Hydraulic unit",
+              "processingTime": 10800.0,
+              "personnel": [
+                "Mechanic"
+              ],
+              "precedence": [
+                "Vises"
+              ],
+              "materials": [
+                "PART-0008"
+              ],
+              "id": 9,
+              "outline_level": 3
+            }
+          ]
+        },
+        {
+          "name": "Commissioning",
+          "processingTime": 0.0,
+          "personnel": [],
+          "precedence": [],
+          "materials": [],
+          "id": 10,
+          "outline_level": 2,
+          "tasks": [
+            {
+              "name": "Electrical hook-up",
+              "processingTime": 28800.0,
+              "personnel": [
+                "Electrician"
+              ],
+              "precedence": [
+                "Electro-spindle installation",
+                "Hydraulic unit"
+              ],
+              "materials": [
+                "PART-0009"
+              ],
+              "id": 11,
+              "outline_level": 3
+            },
+            {
+              "name": "Testing",
+              "processingTime": 21600.0,
+              "personnel": [
+                "Tester"
+              ],
+              "precedence": [
+                "Electrical hook-up"
+              ],
+              "materials": [],
+              "id": 12,
+              "outline_level": 3
+            },
+            {
+              "name": "Painting",
+              "processingTime": 14400.0,
+              "personnel": [
+                "Painter"
+              ],
+              "precedence": [
+                "Testing"
+              ],
+              "materials": [
+                "PART-0010"
+              ],
+              "id": 13,
+              "outline_level": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

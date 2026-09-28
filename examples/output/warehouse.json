@@ -1,0 +1,101 @@
+[
+  {
+    "Code": "PART-0001",
+    "Area": "D",
+    "Shelf Unit": "A",
+    "Shelf Level": 1,
+    "Quantity": 4,
+    "Available": true,
+    "Inbound": false
+  },
+  {
+    "Code": "PART-0002",
+    "Area": "D",
+    "Shelf Unit": "A",
+    "Shelf Level": 2,
+    "Quantity": 12,
+    "Available": true,
+    "Inbound": false
+  },
+  {
+    "Code": "PART-0003",
+    "Area": "D",
+    "Shelf Unit": "B",
+    "Shelf Level": 1,
+    "Quantity": 2,
+    "Available": true,
+    "Inbound": false
+  },
+  {
+    "Code": "PART-0004",
+    "Area": "D",
+    "Shelf Unit": "B",
+    "Shelf Level": 3,
+    "Quantity": 1,
+    "Available": true,
+    "Inbound": false
+  },
+  {
+    "Code": "PART-0005",
+    "Area": "D",
+    "Shelf Unit": "C",
+    "Shelf Level": 1,
+    "Quantity": 6,
+    "Available": true,
+    "Inbound": false
+  },
+  {
+    "Code": "PART-0006",
+    "Area": "D",
+    "Shelf Unit": "C",
+    "Shelf Level": 2,
+    "Quantity": 2,
+    "Available": true,
+    "Inbound": false
+  },
+  {
+    "Code": "PART-0007",
+    "Area": "D",
+    "Shelf Unit": "C",
+    "Shelf Level": 4,
+    "Quantity": 8,
+    "Available": true,
+    "Inbound": false
+  },
+  {
+    "Code": "PART-0008",
+    "Area": "D",
+    "Shelf Unit": "D",
+    "Shelf Level": 1,
+    "Quantity": 1,
+    "Available": false,
+    "Inbound": true
+  },
+  {
+    "Code": "PART-0009",
+    "Area": "D",
+    "Shelf Unit": "D",
+    "Shelf Level": 2,
+    "Quantity": 3,
+    "Available": true,
+    "Inbound": false
+  },
+  {
+    "Code": "PART-0010",
+    "Area": "D",
+    "Shelf Unit": "E",
+    "Shelf Level": 6,
+    "Quantity": 5,
+    "Available": true,
+    "Inbound": false
+  },
+  {
+    "Code": "10000000001",
+    "Area": "D",
+    "Shelf Unit": "E",
+    "Shelf Level": 5,
+    "Quantity": 20,
+    "Available": true,
+    "Inbound": false
+  }
+]

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PlantSimulationTable>
+	<Table XDim="4" YDim="-1">
+		<ColumnIndex Type="string">
+			<Cell>MU</Cell>
+			<Cell>Number</Cell>
+			<Cell>Name</Cell>
+			<Cell>Attributes</Cell>
+		</ColumnIndex>
+		<Column Type="object">
+			<Cell>.UserObjects.B-M</Cell>
+			<Cell/>
+		</Column>
+		<Column Type="integer">
+			<Cell>1</Cell>
+			<Cell/>
+		</Column>
+		<Column Type="string">
+			<Cell>B-M</Cell>
+			<Cell/>
+		</Column>
+		<Column Type="table">
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Integer</Cell>
+					<Cell>Boolean</Cell>
+					<Cell>String</Cell>
+					<Cell>Real</Cell>
+					<Cell>Time</Cell>
+					<Cell>Date</Cell>
+					<Cell>Datetime</Cell>
+					<Cell>Object</Cell>
+					<Cell>Length</Cell>
+					<Cell>Weight</Cell>
+					<Cell>Speed</Cell>
+					<Cell>Acceleration</Cell>
+					<Cell>Money</Cell>
+					<Cell>Table</Cell>
+					<Cell>List</Cell>
+					<Cell>Stack</Cell>
+					<Cell>Queue</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>Task</Cell>
+					<Cell/>
+				</Column>
+				<Column Type="integer">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="boolean">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="string">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="real">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="time">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="date">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="datetime">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="object">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="length[m]">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="weight[kg]">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="speed[m/s]">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="acceleration[m/s²]">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="money[€]">
+					<Cell/>
+					<Cell/>
+				</Column>
+				<Column Type="table">
+					<Table Name="Task" XDim="-1" YDim="-1">
+						<RowIndex Type="string">
+							<Cell>Cross-beam axes</Cell>
+							<Cell>Services</Cell>
+							<Cell>Electro-spindle installation</Cell>
+							<Cell>Base slides</Cell>
+							<Cell>Vises</Cell>
+							<Cell>Hydraulic unit</Cell>
+							<Cell>Electrical hook-up</Cell>
+							<Cell>Testing</Cell>
+							<Cell>Painting</Cell>
+						</RowIndex>
+						<ColumnIndex Type="string">
+							<Cell/>
+							<Cell>procTime</Cell>
+							<Cell>precedence</Cell>
+							<Cell>materials</Cell>
+							<Cell>hr</Cell>
+							<Cell>Started</Cell>
+							<Cell>Completed</Cell>
+						</ColumnIndex>
+						<Column Type="string">
+							<Cell/>
+							<Cell/>
+							<Cell/>
+							<Cell/>
+							<Cell/>
+							<Cell/>
+							<Cell/>
+							<Cell/>
+							<Cell/>
+							<Cell/>
+						</Column>
+						<Column Type="real">
+							<Cell>28800.0</Cell>
+							<Cell>14400.0</Cell>
+							<Cell>14400.0</Cell>
+							<Cell>21600.0</Cell>
+							<Cell>14400.0</Cell>
+							<Cell>10800.0</Cell>
+							<Cell>28800.0</Cell>
+							<Cell>21600.0</Cell>
+							<Cell>14400.0</Cell>
+							<Cell/>
+						</Column>
+						<Column Type="list">
+							<Cell>
+								<Table Name="Cross-beam axes" XDim="1" YDim="-1"/>
+							</Cell>
+							<Cell>
+								<Table Name="Services" XDim="1" YDim="-1"/>
+							</Cell>
+							<Cell>
+								<Table Name="Electro-spindle installation" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Cross-beam axes</Cell>
+										<Cell>Services</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Base slides" XDim="1" YDim="-1"/>
+							</Cell>
+							<Cell>
+								<Table Name="Vises" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Base slides</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Hydraulic unit" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Vises</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Electrical hook-up" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Electro-spindle installation</Cell>
+										<Cell>Hydraulic unit</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Testing" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Electrical hook-up</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Painting" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Testing</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell/>
+						</Column>
+						<Column Type="list">
+							<Cell>
+								<Table Name="Cross-beam axes" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>PART-0001</Cell>
+										<Cell>PART-0002</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Services" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>PART-0003</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Electro-spindle installation" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>PART-0004</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Base slides" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>PART-0005</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Vises" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>PART-0006</Cell>
+										<Cell>PART-0007</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Hydraulic unit" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>PART-0008</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Electrical hook-up" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>PART-0009</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Testing" XDim="1" YDim="-1"/>
+							</Cell>
+							<Cell>
+								<Table Name="Painting" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>PART-0010</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell/>
+						</Column>
+						<Column Type="list">
+							<Cell>
+								<Table Name="Cross-beam axes" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Mechanic</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Services" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Mechanic</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Electro-spindle installation" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Mechanic</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Base slides" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Mechanic</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Vises" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Mechanic</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Hydraulic unit" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Mechanic</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Electrical hook-up" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Electrician</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Testing" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Tester</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell>
+								<Table Name="Painting" XDim="1" YDim="-1">
+									<Column Type="string">
+										<Cell>Painter</Cell>
+									</Column>
+								</Table>
+							</Cell>
+							<Cell/>
+						</Column>
+						<Column Type="boolean">
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell/>
+						</Column>
+						<Column Type="boolean">
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell>false</Cell>
+							<Cell/>
+						</Column>
+					</Table>
+					<Cell/>
+				</Column>
+				<Column Type="list"/>
+				<Column Type="stack"/>
+				<Column Type="queue"/>
+			</Table>
+			<Cell/>
+		</Column>
+	</Table>
+</PlantSimulationTable>

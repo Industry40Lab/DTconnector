@@ -1,0 +1,133 @@
+{
+  "products": [
+    {
+      "Name": "B-M",
+      "tasks": [
+        {
+          "name": "Cross-beam axes",
+          "processingTime": 28800.0,
+          "personnel": [
+            "Mechanic"
+          ],
+          "precedence": [],
+          "materials": [
+            "PART-0001",
+            "PART-0002"
+          ],
+          "id": 3
+        },
+        {
+          "name": "Services",
+          "processingTime": 14400.0,
+          "personnel": [
+            "Mechanic"
+          ],
+          "precedence": [],
+          "materials": [
+            "PART-0003"
+          ],
+          "id": 4
+        },
+        {
+          "name": "Electro-spindle installation",
+          "processingTime": 14400.0,
+          "personnel": [
+            "Mechanic"
+          ],
+          "precedence": [
+            "Cross-beam axes",
+            "Services"
+          ],
+          "materials": [
+            "PART-0004"
+          ],
+          "id": 5
+        },
+        {
+          "name": "Base slides",
+          "processingTime": 21600.0,
+          "personnel": [
+            "Mechanic"
+          ],
+          "precedence": [],
+          "materials": [
+            "PART-0005"
+          ],
+          "id": 7
+        },
+        {
+          "name": "Vises",
+          "processingTime": 14400.0,
+          "personnel": [
+            "Mechanic"
+          ],
+          "precedence": [
+            "Base slides"
+          ],
+          "materials": [
+            "PART-0006",
+            "PART-0007"
+          ],
+          "id": 8
+        },
+        {
+          "name": "Hydraulic unit",
+          "processingTime": 10800.0,
+          "personnel": [
+            "Mechanic"
+          ],
+          "precedence": [
+            "Vises"
+          ],
+          "materials": [
+            "PART-0008"
+          ],
+          "id": 9
+        },
+        {
+          "name": "Electrical hook-up",
+          "processingTime": 28800.0,
+          "personnel": [
+            "Electrician"
+          ],
+          "precedence": [
+            "Electro-spindle installation",
+            "Hydraulic unit"
+          ],
+          "materials": [
+            "PART-0009"
+          ],
+          "id": 11
+        },
+        {
+          "name": "Testing",
+          "processingTime": 21600.0,
+          "personnel": [
+            "Tester"
+          ],
+          "precedence": [
+            "Electrical hook-up"
+          ],
+          "materials": [],
+          "id": 12
+        },
+        {
+          "name": "Painting",
+          "processingTime": 14400.0,
+          "personnel": [
+            "Painter"
+          ],
+          "precedence": [
+            "Testing"
+          ],
+          "materials": [
+            "PART-0010"
+          ],
+          "id": 13
+        }
+      ],
+      "MU": "",
+      "Number": 1
+    }
+  ]
+}

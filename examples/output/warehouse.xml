@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PlantSimulationTable>
+	<Table XDim="4" YDim="-1">
+		<ColumnIndex Type="string">
+			<Cell>MU</Cell>
+			<Cell>Number</Cell>
+			<Cell>Name</Cell>
+			<Cell>Attributes</Cell>
+		</ColumnIndex>
+		<Column Type="object">
+			<Cell>.UserObjects.Parts.PART-0001</Cell>
+			<Cell>.UserObjects.Parts.PART-0002</Cell>
+			<Cell>.UserObjects.Parts.PART-0003</Cell>
+			<Cell>.UserObjects.Parts.PART-0004</Cell>
+			<Cell>.UserObjects.Parts.PART-0005</Cell>
+			<Cell>.UserObjects.Parts.PART-0006</Cell>
+			<Cell>.UserObjects.Parts.PART-0007</Cell>
+			<Cell>.UserObjects.Parts.PART-0008</Cell>
+			<Cell>.UserObjects.Parts.PART-0009</Cell>
+			<Cell>.UserObjects.Parts.PART-0010</Cell>
+			<Cell>.UserObjects.Parts._10000000001</Cell>
+			<Cell/>
+		</Column>
+		<Column Type="integer">
+			<Cell>4</Cell>
+			<Cell>12</Cell>
+			<Cell>2</Cell>
+			<Cell>1</Cell>
+			<Cell>6</Cell>
+			<Cell>2</Cell>
+			<Cell>8</Cell>
+			<Cell>1</Cell>
+			<Cell>3</Cell>
+			<Cell>5</Cell>
+			<Cell>20</Cell>
+			<Cell/>
+		</Column>
+		<Column Type="string">
+			<Cell>PART-0001</Cell>
+			<Cell>PART-0002</Cell>
+			<Cell>PART-0003</Cell>
+			<Cell>PART-0004</Cell>
+			<Cell>PART-0005</Cell>
+			<Cell>PART-0006</Cell>
+			<Cell>PART-0007</Cell>
+			<Cell>PART-0008</Cell>
+			<Cell>PART-0009</Cell>
+			<Cell>PART-0010</Cell>
+			<Cell>_10000000001</Cell>
+			<Cell/>
+		</Column>
+		<Column Type="table">
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0001</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>A</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>1</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0002</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>A</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>2</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0003</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>B</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>1</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0004</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>B</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>3</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0005</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>C</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>1</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0006</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>C</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>2</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0007</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>C</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>4</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0008</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>1</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0009</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>2</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>PART-0010</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>E</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>6</Cell>
+				</Column>
+			</Table>
+			<Table Name="Attributes" XDim="18" YDim="-1">
+				<ColumnIndex Type="string">
+					<Cell>Name of Attribute</Cell>
+					<Cell>Area</Cell>
+					<Cell>Shelf Unit</Cell>
+					<Cell>Shelf Level</Cell>
+				</ColumnIndex>
+				<Column Type="string">
+					<Cell>_10000000001</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>D</Cell>
+				</Column>
+				<Column Type="string">
+					<Cell>E</Cell>
+				</Column>
+				<Column Type="integer">
+					<Cell>5</Cell>
+				</Column>
+			</Table>
+			<Cell/>
+		</Column>
+	</Table>
+</PlantSimulationTable>
