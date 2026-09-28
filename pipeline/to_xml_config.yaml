@@ -1,0 +1,90 @@
+# Flexible mapping configuration for JSON to XML conversion
+# Separate key mapping (field names) and value mapping (content values)
+
+# Key mapping: Transform JSON field names to XML field names
+key_mapping:
+  # Direct mappings (exact match)
+  direct:
+    processingTime: "procTime"
+    processing_time: "procTime"
+    proc_time: "procTime"
+    personnel: "hr"
+    human_resources: "hr"
+    started: "Started"
+    completed: "Completed"
+    precedence: "precedence"
+    materials: "materials"
+  
+  # Pattern-based rules for keys
+  patterns:
+    - rule: "snake_to_camel"
+      pattern: "^([a-z]+)_([a-z]+)$"
+      template: "{match1}{match2.capitalize()}"
+      description: "Convert snake_case to camelCase"
+  
+  # Fallback: return original key if no mapping found
+  fallback:
+    action: "keep_original"
+
+# Value mapping: Transform JSON values to XML values
+value_mapping:
+  # Direct mappings (exact match)
+  direct:
+    PartA: ".UserObjects.Parts.PartA"
+    PartB: ".UserObjects.Parts.PartB"
+    PartC: ".UserObjects.Parts.PartC"
+    PartD: ".UserObjects.Parts.PartD"
+  
+  # Pattern-based rules for values
+  patterns:
+    - rule: "part_with_letter"
+      pattern: "^[Pp]art([A-Z])$"
+      template: ".UserObjects.Parts.Part{match1}"
+      description: "Maps Part{Letter} to .UserObjects.Parts.Part{Letter}"
+      
+    - rule: "single_letter"
+      pattern: "^([A-Z])$"
+      template: ".UserObjects.Parts.Part{match1}"
+      description: "Maps single letter to .UserObjects.Parts.Part{Letter}"
+  
+  # Multiple values to same target
+  aliases:
+    - sources: ["ComponentA", "CompA"]
+      target: ".UserObjects.Parts.PartA"
+    - sources: ["ComponentB", "CompB"] 
+      target: ".UserObjects.Parts.PartB"
+  
+  # Fallback rule for values: keep the value unchanged if no rule matches
+  fallback:
+    action: "keep_original"
+
+# Predefined data: Default values to set for specific columns
+predefined_data:
+  # Task table column defaults
+  task_columns:
+    Started: false      # Always set Started to false
+    Completed: false    # Always set Completed to false
+    # Add more defaults as needed:
+    # Status: "pending"
+    # Priority: 1
+
+# Products (machine types): MU path = prefix + product name
+product_mu:
+  prefix: ".UserObjects."
+
+# Warehouse records (WMS feed): which fields identify the material, its quantity and its location
+warehouse:
+  code_field: "Code"
+  quantity_field: "Quantity"
+  attributes: ["Area", "Shelf Unit", "Shelf Level"]
+  mu_prefix: ".UserObjects.Parts."
+
+settings:
+  case_sensitive: false
+  enable_regex: true
+  
+# Evaluation order for both key and value mapping:
+# 1. Direct mappings (exact match)
+# 2. Aliases (exact match in lists)
+# 3. Patterns (regex match)
+# 4. Fallback (if nothing matches)

@@ -1,0 +1,32 @@
+# First transformation stage: spreadsheet exports -> JSON (canonical schema field names)
+
+excel_column_mapping:
+  # Direct column-to-field mappings (spreadsheet column -> JSON field)
+  direct:
+    Name: "name"
+    Duration: "processingTime"          # processing time, in seconds
+    "Resource Names": "personnel"       # required skill group(s)
+    "Outline Level": "outline_level"    # task hierarchy level
+    Predecessors: "precedence"
+    Materials: "materials"              # material codes, comma separated
+
+  # Pattern-based rules: regular expressions on column names, to absorb naming variants
+  # across departments or exports
+  patterns:
+    - pattern: "^(task[ _]?name|activity|phase)$"
+      field: "name"
+    - pattern: "^(proc(essing)?[ _]?time|work(ing)?[ _]?time)$"
+      field: "processingTime"
+    - pattern: "^(skill|role|operator[ _]?type|worker[ _]?type)s?$"
+      field: "personnel"
+    - pattern: "^(predecessor|precedence|depend(s|ency|encies))s?$"
+      field: "precedence"
+    - pattern: "^(item|part|component|material)[ _]?(code)?s?$"
+      field: "materials"
+
+# Processing options
+processing:
+  convert_formulas: true
+  handle_merged_cells: true
+  date_format: "%Y-%m-%d"
+  encoding: "utf-8"

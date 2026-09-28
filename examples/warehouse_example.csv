@@ -1,0 +1,12 @@
+Code,Area,Shelf Unit,Shelf Level,Quantity,Available,Inbound
+PART-0001,D,A,1,4,Yes,No
+PART-0002,D,A,2,12,Yes,No
+PART-0003,D,B,1,2,Yes,No
+PART-0004,D,B,3,1,Yes,No
+PART-0005,D,C,1,6,Yes,No
+PART-0006,D,C,2,2,Yes,No
+PART-0007,D,C,4,8,Yes,No
+PART-0008,D,D,1,1,No,Yes
+PART-0009,D,D,2,3,Yes,No
+PART-0010,D,E,6,5,Yes,No
+10000000001,D,E,5,20,Yes,No
