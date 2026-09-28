@@ -123,6 +123,12 @@ DTconnector/
 - **Development history.** The pipeline was developed at Politecnico di Milano within the MSc thesis of Matilde Palladini and Ludovica Savoini. This public release was completed and consolidated in September 2026. The warehouse XML writer, the configuration-driven column mapping, the product naming in the production feed and the one-command runner were added or completed at that stage, and are covered by the example.
 - **Scope.** The Plant Simulation model that consumes the XML feeds is not part of this repository.
 
+## License
+
+Copyright (C) 2025-2026 the DTconnector authors, Politecnico di Milano.
+
+DTconnector is free software, released under the [GNU General Public License v3.0](LICENSE). You may use, study, modify and share it, including for commercial purposes; if you distribute a modified version, it must be released under the same license, with its source code. The software comes with no warranty.
+
 ## Authors
 
 Lorenzo Ragazzini, Elisa Negri, Marco Macchi. Department of Management, Economics and Industrial Engineering, Politecnico di Milano.
