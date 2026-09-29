@@ -17,7 +17,7 @@ It is the Integration Layer of the three-layer Digital Twin architecture present
 | Stage | What happens | Script |
 |---|---|---|
 | **Extract** | Production data (task hierarchy, processing times, skills, precedences, materials) are read from a spreadsheet export; warehouse data (stock and storage locations) from a CSV export. | `excel_to_json_parser.py`, `warehouse_csv_to_json_parser.py` |
-| **Transform** | Column names are mapped onto the canonical schema through `to_json_config.yaml`, including regular expressions that absorb naming variants across departments. The task hierarchy is then **flattened** to executable leaf tasks, which inherit skills, materials and parent references from their parent levels. | `excel_to_json_parser.py`, `flatten_tasks.py` |
+| **Transform** | Column names are mapped onto the canonical schema through `to_json_config.yaml`, including regular expressions that absorb naming variants across departments. The task hierarchy is then **flattened** to executable leaf tasks, which inherit skills, materials, predecessors and parent references from their parent levels. A predecessor that names a parent task is resolved to all the leaf tasks below it. | `excel_to_json_parser.py`, `flatten_tasks.py` |
 | **Load** | Keys and values are mapped onto the simulation objects through `to_xml_config.yaml` and serialised as `PlantSimulationTable` XML, one feed for production and one for the warehouse. | `json_to_xml_with_config.py` |
 
 The only engine-specific step is the final JSON-to-XML serialisation. Everything upstream works on the canonical schema and is unaffected by the choice of simulation engine.
@@ -43,7 +43,7 @@ This writes to `output/`:
 | File | Content |
 |---|---|
 | `production.json` | Task hierarchy in the canonical schema |
-| `production_flattened.json` | Leaf tasks only, with inherited skills and materials |
+| `production_flattened.json` | Leaf tasks only, with inherited skills, materials and predecessors |
 | `production.xml` | Production feed for the simulation model |
 | `warehouse.json` | Stock records |
 | `warehouse.xml` | Warehouse feed for the simulation model |

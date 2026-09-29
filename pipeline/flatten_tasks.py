@@ -53,6 +53,7 @@ def flatten_product_tasks(product: Dict) -> Dict:
     # Collect all leaf tasks with inherited resources
     leaf_tasks = []
     collect_leaf_tasks(product.get('tasks', []), [], leaf_tasks)
+    resolve_parent_predecessors(product.get('tasks', []), leaf_tasks)
     
     flattened_product['tasks'] = leaf_tasks
     
@@ -75,6 +76,7 @@ def collect_leaf_tasks(tasks: List[Dict], parent_resources: List[Dict], leaf_tas
         current_resources.append({
             'personnel': task.get('personnel', []),
             'materials': task.get('materials', []),
+            'precedence': task.get('precedence', []),
             'processingTime': task.get('processingTime', 0.0),
             'id': task.get('id'),
             'name': task.get('name', '')
@@ -89,6 +91,48 @@ def collect_leaf_tasks(tasks: List[Dict], parent_resources: List[Dict], leaf_tas
             leaf_tasks.append(leaf_task)
 
 
+def leaves_under(task: Dict) -> List[str]:
+    """Names of the leaf tasks below a task (the task itself if it is a leaf)."""
+    if not task.get('tasks'):
+        return [task.get('name', '')]
+    names = []
+    for child in task['tasks']:
+        names.extend(leaves_under(child))
+    return names
+
+
+def resolve_parent_predecessors(tasks: List[Dict], leaf_tasks: List[Dict]) -> None:
+    """
+    Parent tasks disappear when the hierarchy is flattened, so a predecessor that
+    names a parent task is replaced by all the leaf tasks below that parent.
+    A reference to one of the task's own ancestors is dropped, since it would
+    make the task wait for itself.
+    """
+    parent_leaves = {}
+    leaf_ancestors = {}
+
+    def index(ts, chain):
+        for t in ts:
+            name = t.get('name', '')
+            if t.get('tasks'):
+                parent_leaves[name] = leaves_under(t)
+                index(t['tasks'], chain + [name])
+            else:
+                leaf_ancestors[name] = set(chain)
+    index(tasks, [])
+
+    for leaf in leaf_tasks:
+        ancestors = leaf_ancestors.get(leaf.get('name', ''), set())
+        resolved = []
+        for pred in leaf.get('precedence', []):
+            if pred in ancestors:
+                continue
+            for name in parent_leaves.get(pred, [pred]):
+                if name != leaf.get('name') and name not in resolved:
+                    resolved.append(name)
+        leaf['precedence'] = resolved
+
+
 def create_leaf_task_with_inheritance(task: Dict, parent_resources: List[Dict]) -> Dict:
     """
     Create a leaf task with inherited resources from all parent levels.
@@ -100,6 +144,7 @@ def create_leaf_task_with_inheritance(task: Dict, parent_resources: List[Dict]) 
     # Collect inherited resources
     inherited_personnel = set()
     inherited_materials = set()
+    inherited_precedence = []
     inherited_processing_time = 0.0
     
     # Inherit from all parent levels
@@ -114,6 +159,13 @@ def create_leaf_task_with_inheritance(task: Dict, parent_resources: List[Dict]) 
             if material.strip():
                 inherited_materials.add(material.strip())
         
+        # Inherit precedence: a parent's predecessors must be complete before
+        # any of its leaf tasks can start
+        for pred in parent.get('precedence', []):
+            pred = pred.strip()
+            if pred and pred not in inherited_precedence:
+                inherited_precedence.append(pred)
+        
         # Accumulate processing time from parents (if they don't have children)
         parent_time = parent.get('processingTime', 0.0)
         if parent_time > 0:
@@ -126,10 +178,13 @@ def create_leaf_task_with_inheritance(task: Dict, parent_resources: List[Dict]) 
     # Combine inherited and task-specific resources
     all_personnel = list(inherited_personnel | task_personnel)
     all_materials = list(inherited_materials | task_materials)
+    own_precedence = [p.strip() for p in task.get('precedence', []) if p.strip()]
+    all_precedence = own_precedence + [p for p in inherited_precedence if p not in own_precedence]
     
     # Update leaf task with combined resources
     leaf_task['personnel'] = sorted(all_personnel)
     leaf_task['materials'] = sorted(all_materials)
+    leaf_task['precedence'] = all_precedence
     
     # Use task's own processing time, or inherited time if task has none
     if task.get('processingTime', 0.0) == 0.0 and inherited_processing_time > 0:
@@ -140,10 +195,11 @@ def create_leaf_task_with_inheritance(task: Dict, parent_resources: List[Dict]) 
     leaf_task.pop('outline_level', None)
     
     # Add inheritance info for debugging (optional)
-    if inherited_personnel or inherited_materials:
+    if inherited_personnel or inherited_materials or inherited_precedence:
         leaf_task['_inheritance_info'] = {
-            'inherited_personnel': list(inherited_personnel),
-            'inherited_materials': list(inherited_materials),
+            'inherited_personnel': sorted(inherited_personnel),
+            'inherited_materials': sorted(inherited_materials),
+            'inherited_precedence': inherited_precedence,
             'parent_chain': [p.get('name', f"ID-{p.get('id', 'unknown')}") for p in parent_resources[:-1]]
         }
     
